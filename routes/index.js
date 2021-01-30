@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.post('/validation-rule', (req, res, next) => {
+router.post('/validate-rule', (req, res, next) => {
     // console.log('req-body:', req.body);
     const {rule, data} = req.body;
     console.log('data:', data);
