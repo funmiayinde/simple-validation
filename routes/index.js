@@ -141,5 +141,4 @@ router.post('/validation-rule', (req, res, next) => {
     _.assign(response, {message: `field ${field} successfully validated.`, data: responseData});
     return res.status(200).json(response);
 });
-
 module.exports = router;
