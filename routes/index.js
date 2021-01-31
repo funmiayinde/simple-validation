@@ -45,7 +45,12 @@ router.post('/validate-rule', (req, res, next) => {
                 return (v1 >= v2) ? true : `field ${fieldName} failed validation.`;
             }
             case 'contains': {
-                return data[v1] ? true : `field ${fieldName} failed validation.`;
+                if (data[v1]) {
+                    console.log('value:', data[v1]);
+                    return true;
+                } else {
+                    `field ${fieldName} failed validation.`;
+                }
             }
         }
     };
