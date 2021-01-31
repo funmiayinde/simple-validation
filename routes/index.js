@@ -131,7 +131,7 @@ router.post('/validate-rule', (req, res, next) => {
                 condition_value
             }
         };
-        _.assign(response, {message: `${conditionResult}`, data});
+        _.assign(response, {status: 'success', message: `${conditionResult}`, data});
         return res.status(400).json(response);
     }
     const responseData = {
@@ -143,7 +143,7 @@ router.post('/validate-rule', (req, res, next) => {
             condition_value
         }
     };
-    _.assign(response, {message: `field ${field} successfully validated.`, data: responseData});
+    _.assign(response, {status: 'success', message: `field ${field} successfully validated.`, data: responseData});
     return res.status(200).json(response);
 });
 module.exports = router;
